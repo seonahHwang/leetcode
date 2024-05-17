@@ -64,7 +64,6 @@ public class two_sum {
 
         for(int i=0;i<nums.length;i++){
             map.put(nums[i],i);
-        }
 
         int a = 0;
         int idx = 0;
