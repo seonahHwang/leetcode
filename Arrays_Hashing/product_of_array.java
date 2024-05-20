@@ -10,7 +10,7 @@ public class product_of_array {
     * Solution
     * 1) product every elements in left side except self and store to left[]
     * 2) product every elements in right side except self and store to right[]
-    * 3) product left[] and right[]
+    * 3) product left[] and right[]ㅁㅋ ㅋㅁㅁㅁㅁㅁ
     * */
     public static void main(String[] args) {
         int arr[] = {1,2,3,4};
