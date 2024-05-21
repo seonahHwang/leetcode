@@ -20,7 +20,7 @@ public class ThreeSum {
      *
      * tc : O(n^2) , sc: O(n) 정렬 + O(K) 결과 저장 => O(n)
      */
-    /
+
     public static void main(String[] args) {
         int arr[] = {-1,0,1,2,-1,-4};
         List<List<Integer>> li = threeSum(arr);
