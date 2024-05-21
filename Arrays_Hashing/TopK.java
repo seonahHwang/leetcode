@@ -35,7 +35,6 @@ public class TopK {
             }
         }
         PriorityQueue<Map.Entry<Integer,Integer>> topKElements = new PriorityQueue<>((e1,e2) -> e1.getValue() - e2.getValue());
-
         for(Map.Entry<Integer,Integer> entry : numFrequencyMap.entrySet()){
             topKElements.add(entry);
             if(topKElements.size() > k){
