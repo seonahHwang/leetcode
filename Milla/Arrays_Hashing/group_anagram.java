@@ -1,4 +1,4 @@
-package Arrays_Hashing;
+package Milla.Arrays_Hashing;
 
 import java.util.*;
 

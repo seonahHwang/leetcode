@@ -1,4 +1,4 @@
-package Arrays_Hashing;
+package Milla.TwoPointer;
 
 import java.util.Arrays;
 

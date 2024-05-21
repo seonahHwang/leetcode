@@ -1,6 +1,4 @@
-package Arrays_Hashing;
-
-import com.sun.source.tree.Tree;
+package Milla.Arrays_Hashing;
 
 import java.util.*;
 
