@@ -14,6 +14,8 @@ public class BuyAndSell {
     * 1. start left at 0, right at 1
     * 2. when right value is greater than left, calculate gap and find max value.
     * 3. if left is greater than right, then we don't need to calculate and just left pointer move to right pointer
+    *
+    * TC : O(N), SC : O(1)
     * */
 
     public static void main(String[] args) {
