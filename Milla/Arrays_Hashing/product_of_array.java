@@ -8,9 +8,9 @@ public class product_of_array {
     * 1) nums.length : >= 2
     *
     * Solution
-    * 1) product every elements in left side except self and store to left[]
-    * 2) product every elements in right side except self and store to right[]
-    * 3) product left[] and right[]ㅁㅋ ㅋㅁㅁㅁㅁㅁ
+    * 1) multiply every elements in left side except self and store to left[]
+    * 2) multiply every elements in right side except self and store to right[]
+    * 3) multiply left[] and right[]
     * */
     public static void main(String[] args) {
         int arr[] = {1,2,3,4};

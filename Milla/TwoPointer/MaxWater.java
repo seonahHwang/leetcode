@@ -15,7 +15,7 @@ public class MaxWater {
     * calculate area size => (gap between left and right) * minimum height
     * compare the area size to find max area.
     *
-    * TC : O(N), SC : O(N)
+    * TC : O(N), SC : O(1) 주어진 배열외에는 변수만 사용해서
     * */
     public static void main(String[] args) {
 //        int arr[] = {1,7,2,5,4,7,3,6};
