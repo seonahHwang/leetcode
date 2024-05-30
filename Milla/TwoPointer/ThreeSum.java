@@ -21,6 +21,21 @@ public class ThreeSum {
      * tc : O(n^2) , sc: O(n) 정렬 + O(K) 결과 저장 => O(n)
      */
 
+    /*
+    * portion
+    * will initaily be
+    * it's greater than zero
+    * increment / decrement
+    * on the other hand
+    * the last case is
+    * equal to zero
+    * negative 2 => -2
+    * loop is gonna excute
+    * nums of left
+    *
+    * decimal 소수
+    * */
+
     public static void main(String[] args) {
         int arr[] = {-1,0,1,2,-1,-4};
         List<List<Integer>> li = threeSum(arr);
