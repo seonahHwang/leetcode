@@ -25,6 +25,8 @@ public class PermutationString {
     * Use integer array to count each character.
     * If the matchCount is going to 26, we can return true.
     * If we go through s1, s2 but we get matchcount less than 26, It means false.
+    *
+    * TC : O(s1.length() + s2.length()), SC : O(26) -> O(1)
     * */
     public static void main(String[] args) {
         String s1 = "abc";
