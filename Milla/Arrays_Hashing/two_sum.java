@@ -59,21 +59,21 @@ public class two_sum {
 //    }
 
     public static int[] twoSum(int[] nums, int target) {
-        HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
-        int ans[] = new int[2];
+        HashMap<Integer,Integer> map = new HashMap<Integer,Integer>(); // I create a HashMap to store each number from the 'nums' array as the key and its index as the value.
+        int ans[] = new int[2]; // I create an array 'ans' of size 2. This will store the indices of the two numbers that add up to the target.
 
-        for(int i=0;i<nums.length;i++) {
+        for(int i=0;i<nums.length;i++) { //I'm gonna loop through thr nums array and put each numbera and its index into the map.
             map.put(nums[i], i);
         }
-        int a = 0;
+        int a = 0; //I initialize a and idx to stroe the complementary number its index. *complementary : 상호보완적인
         int idx = 0;
 
-        for (int i=0;i<nums.length;i++){
-            a = target - nums[i];
-            if(map.containsKey(a)){
+        for (int i=0;i<nums.length;i++){ //I loop through the nums array again.
+            a = target - nums[i]; //For each number, we calculate 'a' as the difference between the 'target' and the current number.
+            if(map.containsKey(a)){ // if the difference is in the map, we get its index.
                 idx = (int) map.get(a);
-                if(i == idx) continue;
-                ans[0] = i;
+                if(i == idx) continue; //if i is the same as idx, I skip it.
+                ans[0] = i; //otherwise, we store the indices 'i' and 'idx' in ans array and break out of the loop
                 ans[1] = idx;
                 break;
             }
