@@ -30,7 +30,7 @@ public class PermutationString {
     * */
     public static void main(String[] args) {
         String s1 = "abc";
-        String s2 = "lecabee";
+        String s2 = "aaabbc";
 
         String s1_2 = "abc";
         String s2_2 = "lecaabee";
@@ -58,7 +58,7 @@ public class PermutationString {
         for(int i = 0 ; i < 26 ; i++){
             if(s1arr[i] == s2arr[i]) matchCnt++;
         }
-
+        System.out.println(matchCnt);
         r = s1.length();
 
         while (r < s2.length()){
@@ -67,7 +67,9 @@ public class PermutationString {
             idx = s2.charAt(r) - 'a';
             s2arr[idx]++;
             if(s1arr[idx] == s2arr[idx]) matchCnt++;
-            else if(s1arr[idx] + 1 == s2arr[idx]) matchCnt--;
+            else if(s1arr[idx] + 1 == s2arr[idx]) {
+                matchCnt--;
+            }
 
             idx = s2.charAt(l) - 'a';
             s2arr[idx]--;
