@@ -6,7 +6,7 @@ public class valid_sudoku {
     public static void main(String[] args) {
 //        char[][] board = new char[][]{
 //                {'5','3','.','.','7','.','.','.','.'},
-//        {'6','.','.','1','9','5','.','.','.'},
+//        {'6','.','.','1','9','5','.','.','.'},.6/*/**/*/
 //        {'.','9','8','.','.','.','.','6','.'},
 //        {'8','.','.','.','6','.','.','.','3'},
 //        {'4','.','.','8','.','3','.','.','1'},
@@ -33,10 +33,10 @@ public class valid_sudoku {
         int check[] = new int[10];
         int matrix[][] = new int[9][9];
 
-        Arrays.fill(check,0);
+        Arrays.fill(check, 0);
 
         for (int i=0;i<9;i++){
-            for(int j=0;j<9;j++){
+            for(int j=0;j<9;j++){;
                 if(board[i][j] == '.') continue;
                 int num = Character.getNumericValue(board[i][j]);
                 if(check[num] == 1) return false;

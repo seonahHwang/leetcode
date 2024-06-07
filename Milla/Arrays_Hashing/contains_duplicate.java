@@ -8,9 +8,9 @@ class contains_duplicate{
     }
     public static boolean containsDuplicate(int[] nums) {
         HashMap<Integer,Integer> map = new HashMap();
-        for(int i=0;i<nums.length;i++){
-            if(!map.containsKey(nums[i])) map.put(nums[i],1);
-            else return true;
+        for(int i=0;i<nums.length;i++){ // start a loop to go through each number in the array.
+            if(!map.containsKey(nums[i])) map.put(nums[i],1); //for each number, I'll check if it its already in the map.
+            else return true; // if the number is already in the map, it means we've found a duplicate. So we return true.
         }
         return false;
     }
