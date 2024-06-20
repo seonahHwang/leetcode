@@ -1,8 +1,10 @@
 package Milla.Arrays_Hashing;
 
+import java.util.Arrays;
+
 public class MinimumSwaps {
     public static void main(String[] args) {
-        int a[] = {7, 1, 3, 2, 4, 5, 6};
+        int a[] = {4, 3, 1, 2};
         System.out.println(minimumSwaps(a));
     }
     static int minimumSwaps(int[] arr) {
@@ -13,9 +15,11 @@ public class MinimumSwaps {
         while(i < arr.length){
             if(arr[i] != i+1){
                 temp = arr[i];
-                arr[i] = arr[arr[i]-1];
+//                arr[i] = arr[arr[i]-1];
+                arr[i] = arr[temp-1];
                 arr[temp-1] = temp;
                 min++;
+                System.out.println(Arrays.toString(arr));
             }else {
                 i++;
             }

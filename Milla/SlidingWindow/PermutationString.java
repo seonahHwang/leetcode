@@ -29,8 +29,8 @@ public class PermutationString {
     * TC : O(s1.length() + s2.length()), SC : O(26) -> O(1)
     * */
     public static void main(String[] args) {
-        String s1 = "abc";
-        String s2 = "aaabbc";
+        String s1 = "ab";
+        String s2 = "eidbaooo";
 
         String s1_2 = "abc";
         String s2_2 = "lecaabee";
