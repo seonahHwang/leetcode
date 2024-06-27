@@ -29,8 +29,6 @@ public class MaxMin {
                     min = Math.min(min,array[j]);
                     max = Math.max(max,array[j]);
                 }
-                System.out.println("max : "+max);
-                System.out.println("min : "+min);
                 answer = Math.min(answer,max-min);
             }
         }
