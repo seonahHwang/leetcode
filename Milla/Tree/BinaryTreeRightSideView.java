@@ -35,7 +35,7 @@ public class BinaryTreeRightSideView {
     public List<Integer> rightSideView(TreeNode root) {
         //List to store the right side view of the tree
         List<Integer> res = new ArrayList<>();
- ㅌㅋ
+
         //Initialize queue for BFS traversal
         Queue<TreeNode> q = new LinkedList();
 

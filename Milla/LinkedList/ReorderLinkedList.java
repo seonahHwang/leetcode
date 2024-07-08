@@ -28,7 +28,7 @@ SC : O(1) just use extra pointers
 
 public class ReorderLinkedList {
     public static void main(String[] args) {
-        ListNode node = new ListNode(2,new ListNode(4, new ListNode(6, new ListNode(8))));
+        ListNode node = new ListNode(2, new ListNode(4, new ListNode(6, new ListNode(8))));
         reorderList(node);
     }
 
@@ -64,5 +64,6 @@ public class ReorderLinkedList {
             first = tmp1; // Move to the next node in the first half
             second = tmp2; // Move to the next node in the second half
         }
-}
+    }
 
+}
