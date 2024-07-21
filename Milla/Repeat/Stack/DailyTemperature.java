@@ -18,10 +18,6 @@ public class DailyTemperature {
             }
             stack.push(i);
         }
-
-//        while (!stack.isEmpty()){
-//            answer[stack.pop()] = 0;
-//        }
         return answer;
     }
 }
