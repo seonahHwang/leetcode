@@ -2,7 +2,7 @@ package Milla.Repeat.BinarySearch;
 
 public class FindTarget {
     public static void main(String[] args) {
-        System.out.println(search(new int[]{3,4,5,6,1,2}, 1));
+//        System.out.println(search(new int[]{3,4,5,6,1,2}, 1));
     }
 //    public static int search(int[] nums, int target) {
 //        int l = 0;
