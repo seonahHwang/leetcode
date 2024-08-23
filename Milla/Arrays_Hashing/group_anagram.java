@@ -6,7 +6,7 @@ public class group_anagram {
     /*
     * 쓸 수 있는 표현 Neetcode video
     * go through every string that we're given in the input
-    * now we wnat to go through every single character
+    * now we want to go through every single character
     * as you can see
     * Let's say
     * we're just gonna increment this by one //++1

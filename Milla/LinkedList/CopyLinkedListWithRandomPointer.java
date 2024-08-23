@@ -13,7 +13,7 @@ import java.util.HashMap;
 *
 * Plan
 * Use a hash map to map each original node to its copied node.
-* Traverse the original list to creat a new node for each existing ndoe and store the mapping in the hash map.
+* Traverse the original list to creat a new node for each existing node and store the mapping in the hash map.
 * Traverse the original list again to set the next and random pointers of the copied nodes using the hash map.
 *
 * TC : It will take O(n) because creating nodes and storing them in the map takes o(n),
@@ -45,9 +45,9 @@ public class CopyLinkedListWithRandomPointer {
     }
 
     public static Node copyRandomList(Node head) {
-        // Creatie a hsah map to map roiginal nodes to their copies
+        // Create a hash map to map original nodes to their copies
         HashMap<Node,Node> oldToCopy = new HashMap<>();
-        oldToCopy.put(null,null); //Map mull to mull for edge cases where a node might not have a random pointer
+        oldToCopy.put(null,null); //Map mull to mull for edge cases where a node might not have a random pointer.
         Node cur = head;
 
         //Create all nodes and store them in the hash map
