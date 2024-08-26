@@ -50,8 +50,8 @@ public class Twitter {
 
     public void unfollow(int followerId, int followeeId) {
         followMap.computeIfPresent(followerId, (k,v)->{
-            v.remove(followerId);
-            return v;
+            v.remove(followeeId);
+            return v; //수정된 v가 followerId 키에 다시 저장되도록 하는 것입니다.
         });
     }
 }
