@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CombinationTargetSum2 {
     public static void main(String[] args) {
-
+        System.out.println();
     }
     public static List<List<Integer>> combinationSum2(int[] candidates, int target) {
         boolean[] v = new boolean[candidates.length];
