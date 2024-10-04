@@ -21,12 +21,15 @@ public class TopK {
      * nums has only one value -> if k = 0, return null / if k = 1, return the value.
      *
      * TC
-     * pq -> O(logN)
+     * pq -> m*O(logm)
      * map store -> O(N)
-     * 최종 O(N)
+     * 결과 추출 -> O(klogM)
+     * 최종 O(n + m log m + k log m) => O(nlogn)
      *
      * SC
-     * O(N)
+     * m : 고유 숫자개수
+     * n : nums 길이
+     * O(N) 최악의 경우 m = n이라서
      *
      * Dry run
      * */
