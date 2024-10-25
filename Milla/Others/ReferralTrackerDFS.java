@@ -2,75 +2,78 @@ package Milla.Others;
 
 import java.util.*;
 
-public class ReferralTrackerBFS {
+public class ReferralTrackerDFS {
+    private Map<String, List<String>> referralsMap;
+    private Map<String, Integer> referralCount;
+    private Set<String> visited;
 
-    // HashMap to store each person's direct referrals
-    private Map<String, List<String>> referralsMap = new HashMap<>();
-    // HashMap to store the final referral count for each person
-    private Map<String, Integer> referralCount = new HashMap<>();
+    public ReferralTrackerDFS() {
+        referralsMap = new HashMap<>();
+        referralCount = new HashMap<>();
+        visited = new HashSet<>();
+    }
 
-    // Function to add referrals (A -> B means A refers B)
+    // 추천인과 추천받는 사람을 추가하는 메서드
     public void addReferral(String referrer, String referee) {
         referralsMap.putIfAbsent(referrer, new ArrayList<>());
         referralsMap.get(referrer).add(referee);
-
-        // Initialize referral counts for each person if not already set
         referralCount.putIfAbsent(referrer, 0);
         referralCount.putIfAbsent(referee, 0);
     }
 
-    // BFS function to calculate the number of referrals for each user
+    // DFS를 이용해 추천 수를 계산하는 메서드
+    public int dfs(String person) {
+        if (visited.contains(person)) {
+            System.out.println("이미방문 "+ person);
+            return referralCount.get(person); // 이미 처리한 경우, 결과 반환
+        }
+
+        visited.add(person);
+        int count = 0; // 현재 사람의 추천 수
+
+        // 해당 사람의 모든 추천인에게 DFS 수행
+        if (referralsMap.containsKey(person)) {
+            for (String referral : referralsMap.get(person)) {
+//                if(visited.contains(referral)) continue;
+                System.out.println("전 // referral : "+referral + ", count : "+count);
+                count += dfs(referral); // 직접 추천 포함
+                System.out.println("후 referral : "+referral + ", count : "+count);
+            }
+        }
+
+        referralCount.put(person, count); // 최종 추천 수 저장
+        return count;
+    }
+
+    // 추천 수를 계산하는 메서드
     public void calculateReferralCounts() {
         for (String person : referralsMap.keySet()) {
-            if (referralCount.get(person) == 0) {
-                bfs(person);
+            if (!visited.contains(person)) {
+                dfs(person);
+                System.out.println("-------");
             }
         }
     }
 
-    // BFS to traverse referrals and calculate counts
-    private void bfs(String person) {
-        Queue<String> queue = new LinkedList<>();
-        Set<String> visited = new HashSet<>();
-
-        queue.offer(person);
-        visited.add(person);
-
-        while (!queue.isEmpty()) {
-            String current = queue.poll();
-            // Get the people referred by the current person
-            if (referralsMap.containsKey(current)) {
-                for (String referred : referralsMap.get(current)) {
-                    if (!visited.contains(referred)) {
-                        // Increase the referral count for the person who started the referral chain
-                        referralCount.put(person, referralCount.get(person) + 1);
-                        queue.offer(referred);
-                        visited.add(referred);
-                    }
-                }
-            }
-        }
-    }
-
-    // Function to print the leaderboard (user -> referral count)
-    public void printLeaderboard() {
-        for (String person : referralCount.keySet()) {
-            System.out.println(person + ": " + referralCount.get(person) + " referrals");
-        }
+    // 결과를 출력하는 메서드
+    public Map<String, Integer> getReferralCounts() {
+        return referralCount;
     }
 
     public static void main(String[] args) {
-        ReferralTrackerBFS tracker = new ReferralTrackerBFS();
+        ReferralTrackerDFS counter = new ReferralTrackerDFS();
 
-        // Example input
-        tracker.addReferral("A", "B");
-        tracker.addReferral("B", "A");  // Cycle A <-> B
-        tracker.addReferral("C", "D");
+        // 테스트 케이스 추가
+        counter.addReferral("A", "B");
+        counter.addReferral("B", "A");
+//        counter.addReferral("C", "D");
 
-        // Calculate referral counts
-        tracker.calculateReferralCounts();
+        counter.calculateReferralCounts();
 
-        // Print the leaderboard
-        tracker.printLeaderboard();
+        // 결과 출력
+        Map<String, Integer> result = counter.getReferralCounts();
+        for (String person : result.keySet()) {
+            System.out.println(person + ": " + result.get(person) + " referrals");
+        }
     }
 }

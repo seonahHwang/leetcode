@@ -66,4 +66,19 @@ public class ReferralCounter {
     public Map<String, Integer> getReferralCounts() {
         return referralCount;
     }
+
+    public static void main(String[] args) {
+        ReferralCounter tracker = new ReferralCounter();
+
+        // Example input
+        tracker.addReferral("A", "B");
+        tracker.addReferral("B", "A");  // Cycle A <-> B
+        tracker.addReferral("C", "D");
+
+        // Calculate referral counts
+        tracker.calculateReferralCounts();
+        Map<String, Integer> map = tracker.getReferralCounts();
+        // Print the leaderboard
+        System.out.println();
+    }
 }
